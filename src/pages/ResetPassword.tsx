@@ -4,8 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import apiClient from "../api/apiClient";
-
-// Validation schemas
 const requestSchema = z.object({
   email: z.string().email("Invalid email address"),
 });
@@ -18,7 +16,7 @@ const resetSchema = z.object({
     .regex(/[^a-zA-Z0-9]/, "Must include a symbol"),
 });
 
-// Types
+
 type RequestFormData = { email: string };
 type ResetFormData = { password: string };
 

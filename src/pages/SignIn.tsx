@@ -13,7 +13,7 @@ const schema = z.object({
 type SignInFormData = z.infer<typeof schema>;
 
 export default function SignIn() {
-  const { signIn, loading, error, clearError } = useAuth(); // ✅ include clearError
+  const { signIn, loading, error, clearError } = useAuth();
   const navigate = useNavigate();
 
   const {
@@ -49,8 +49,6 @@ export default function SignIn() {
         className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md w-full max-w-md transition-colors duration-300"
       >
         <h2 className="text-2xl font-bold text-center mb-6">Welcome Back</h2>
-
-        {/* Email Field */}
         <div className="mb-4">
           <label
             htmlFor="email"
@@ -71,8 +69,6 @@ export default function SignIn() {
             <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
           )}
         </div>
-
-        {/* Password Field */}
         <div className="mb-2">
           <label
             htmlFor="password"
@@ -95,8 +91,6 @@ export default function SignIn() {
             </p>
           )}
         </div>
-
-        {/* Forgot Password Link */}
         <div className="flex justify-end mb-4">
           <Link
             to="/reset-password"
@@ -105,15 +99,11 @@ export default function SignIn() {
             Forgot your password?
           </Link>
         </div>
-
-        {/* Error Message */}
         {error && (
           <p className="text-red-500 text-sm mb-4 transition-opacity duration-300">
             {error}
           </p>
         )}
-
-        {/* Submit Button */}
         <button
           type="submit"
           disabled={loading}
@@ -122,8 +112,6 @@ export default function SignIn() {
         >
           {loading ? "Processing..." : "Sign In"}
         </button>
-
-        {/* Link to Sign Up */}
         <p className="text-center text-gray-600 dark:text-gray-400 mt-4">
           Don’t have an account?{" "}
           <Link

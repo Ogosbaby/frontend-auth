@@ -10,8 +10,6 @@ type SignUpFormData = {
   password: string;
   confirmPassword: string;
 };
-
-// Zod validation schema
 const schema = z
   .object({
     username: z.string().min(3, "Username must be at least 3 characters"),
@@ -79,8 +77,6 @@ export default function SignUp() {
             <p className="text-red-500 text-sm mt-1">{errors.username.message}</p>
           )}
         </div>
-
-        {/* Email */}
         <div className="mb-4">
           <label
             htmlFor="email"
@@ -101,8 +97,6 @@ export default function SignUp() {
             <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
           )}
         </div>
-
-        {/* Password */}
         <div className="mb-4">
           <label
             htmlFor="password"
@@ -123,8 +117,6 @@ export default function SignUp() {
             <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
           )}
         </div>
-
-        {/* Confirm Password */}
         <div className="mb-4">
           <label
             htmlFor="confirmPassword"
@@ -147,11 +139,7 @@ export default function SignUp() {
             </p>
           )}
         </div>
-
-        {/* Error */}
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-
-        {/* Submit */}
         <button
           type="submit"
           disabled={loading}
@@ -160,8 +148,6 @@ export default function SignUp() {
         >
           {loading ? "Signing up..." : "Sign Up"}
         </button>
-
-        {/* Link to Sign In */}
         <p className="text-center text-gray-600 dark:text-gray-400 mt-4">
           Already have an account?{" "}
           <Link

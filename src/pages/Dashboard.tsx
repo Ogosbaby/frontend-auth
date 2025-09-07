@@ -25,15 +25,11 @@ export default function Dashboard() {
             Sign Out
           </button>
         </div>
-
-        {/* User Info */}
         <div className="space-y-4">
           <div>
             <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
             <p className="text-lg">{user?.email}</p>
           </div>
-
-          {/* Example extra info */}
           <div>
             <p className="text-sm text-gray-500 dark:text-gray-400">Member Since</p>
             <p className="text-lg">
@@ -43,8 +39,6 @@ export default function Dashboard() {
             </p>
           </div>
         </div>
-
-        {/* Actions */}
         <div className="mt-8">
           <h3 className="text-lg font-semibold mb-3">Quick Actions</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
